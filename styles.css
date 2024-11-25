@@ -1,0 +1,374 @@
+html {
+    scroll-behavior: smooth; /* Habilita a rolagem suave */
+}
+
+/* Estilos básicos para todo o site */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #fafafa;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+/* Cabeçalho */
+header {
+    background-color: #00796b;
+    color: white;
+    padding: 1rem 0;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    width: 100%;
+}
+
+/* Título do Cabeçalho */
+header h1 {
+    margin: 0;
+    font-size: 2.5rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Sombra sutil */
+}
+
+/* Navegação */
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* Sombra sutil */
+}
+
+nav ul li {
+    margin: 0 1rem;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #80cbc4;
+}
+
+/* Área Principal */
+main {
+    width: 90%;
+    max-width: 1200px;
+    padding: 2rem;
+    text-align: center;
+}
+
+header a {
+    text-decoration: none; /* Remove o sublinhado */
+    color: white; /* Mantém a cor do texto no título */
+}
+
+.welcome-text {
+    background: linear-gradient(to right, #00a592, #97e0d9); /* Degradê verde */
+    -webkit-background-clip: text; /* Faz o degradê ser aplicado apenas ao texto */
+    color: transparent; /* Torna o fundo visível como texto */
+    font-weight: bold; /* Deixa a palavra em negrito */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+}
+
+/* Definindo a animação de deslizamento para os cards */
+@keyframes slideUp {
+    0% {
+        transform: translateY(50px); /* Começa 50px abaixo da posição original */
+        opacity: 0; /* Começa invisível */
+    }
+    100% {
+        transform: translateY(0); /* Desliza para a posição original */
+        opacity: 1; /* Fica visível */
+    }
+}
+
+/* Cards que irão ser animados */
+.card {
+    opacity: 0; /* Inicialmente invisível */
+    transform: translateY(50px); /* Inicialmente abaixo */
+    transition: opacity 0.5s ease, transform 0.5s ease; /* Transição suave */
+}
+
+/* Classe para cards que estão visíveis e animados */
+.card.visible {
+    animation: slideUp 0.8s ease-out forwards; /* Animação de deslizar para cima */
+}
+
+
+/* Definir a animação de deslizamento */
+@keyframes slideInFromLeft {
+    0% {
+        transform: translateX(-100%); /* Começa fora da tela à esquerda */
+        opacity: 0; /* Começa invisível */
+    }
+    100% {
+        transform: translateX(0); /* Desliza até a posição original */
+        opacity: 1; /* Fica visível */
+    }
+}
+
+#intro {
+    animation: slideInFromLeft 1s ease-out; /* Animação de 1 segundo */
+}
+
+/* Seção de Introdução */
+#intro {
+    
+    background: #00796b;
+    color: white;
+    padding: 2rem 1rem;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+    display: inline-block;
+    text-align: center;
+    width: 100%;
+    max-width: 1200px; /* Ajusta a largura máxima para a mesma largura da imagem */
+    box-sizing: border-box;
+}
+
+#intro h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Sombra sutil */
+}
+
+#intro p {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+
+#intro button {
+    background: #004d40;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+#intro button:hover {
+    background: #00251a;
+}
+
+/* Imagem de Destaque */
+#highlight-image {
+    margin: 2rem 0;
+    text-align: center;
+    width: 100%;
+    max-width: 1200px; /* Ajusta a largura máxima para a mesma largura da introdução */
+    opacity: 0; /* Inicialmente invisível */
+    transform: translateY(50px); /* Inicialmente deslocado para baixo */
+    transition: opacity 0.5s ease, transform 0.5s ease; /* Transição suave */
+}
+
+#highlight-image.visible {
+    animation: slideUp 0.8s ease-out forwards; /* Animação de deslizar para cima */
+}
+
+#highlight-image img {
+    max-width: 73.6%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    
+}
+
+/* Cartões de Destaques */
+#highlights {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    margin-top: 3rem;
+}
+
+.card {
+    background: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    padding: 2rem;
+    width: 30%;
+    text-align: center;
+    transition: transform 0.3s;
+    margin-bottom: 2rem;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.card:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Adiciona uma sombra mais forte */
+    transform: scale(1.15) translateY(-10px);  /* Leve elevação e ampliação */
+
+}
+
+
+.card h3 {
+    color: #00796b;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.card p {
+    color: #666;
+    margin-bottom: 1.5rem;
+}
+.source-link {
+    color: #00796b; /* Cor do texto */
+    text-decoration: none; /* Remove sublinhado */
+    display: inline-block; /* Permite usar padding e background */
+    background-color: #e0f2f1; /* Fundo claro */
+    padding: 0.3rem 0.8rem; /* Espaçamento interno */
+    font-style: italic;
+    border-radius: 8px; /* Bordas arredondadas */
+    box-shadow: 0 0 0 rgba(0, 0, 0, 0); /* Sem sombra inicial */
+    transition: transform 0.2s ease-in-out, 
+                background-color 0.2s ease-in-out, 
+                color 0.2s ease-in-out, 
+                box-shadow 0.2s ease-in-out; /* Animação mais gradual */
+}
+
+/* Estilo no hover */
+.source-link:hover {
+    transform: translateY(-3px) scale(1.05); /* Leve elevação e ampliação */
+    background-color: #b2dfdb; /* Fundo mais escuro no hover */
+    color: #004d40; /* Texto mais escuro */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Sombra suave */
+}
+
+.card:hover {
+    transform: translateY(-10px);
+}
+
+/* Estatísticas Globais */
+#stats {
+    background-color: #f1f1f1;
+    padding: 2rem 1rem;
+    margin: 2rem 0;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.stats-grid {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.stat-item {
+    background: white;
+    border: 2px solid #00796b;
+    border-radius: 8px;
+    padding: 1rem;
+    flex: 1 1 30%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.stat-item h3 {
+    color: #00796b;
+    font-size: 2rem;
+}
+
+/* Depoimentos */
+#testimonials {
+    margin: 2rem 0;
+    padding: 2rem 1rem;
+    background-color: #e0f2f1;
+    border-radius: 8px;
+}
+
+.testimonial {
+    margin-bottom: 1.5rem;
+}
+
+blockquote {
+    font-style: italic;
+    font-size: 1.2rem;
+    margin: 0 0 0.5rem;
+}
+
+/* Recursos */
+#resources ul {
+    list-style: none;
+    padding: 0;
+}
+
+#resources ul li {
+    margin: 0.5rem 0;
+}
+
+#resources ul li a {
+    color: #00796b;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+#resources ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Estilos específicos para a página de Importância */
+#importance {
+    background-color: #f5f5f5;
+    padding: 2rem;
+    margin: 2rem 0;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#importance h2 {
+    font-size: 2.5rem;
+    color: #00796b;
+    margin-bottom: 1rem;
+}
+
+#importance p {
+    line-height: 1.6;
+    color: #333;
+    font-size: 1.1rem;
+}
+
+#importance-facts, #importance-actions {
+    margin-top: 2rem;
+}
+
+#importance-facts h3, #importance-actions h3 {
+    font-size: 2rem;
+    color: #00796b;
+    margin-bottom: 1rem;
+}
+
+#importance-facts ul, #importance-actions ul {
+    list-style: none;
+    padding: 0;
+    font-size: 1.1rem;
+}
+
+#importance-facts ul li, #importance-actions ul li {
+    margin-bottom: 1rem;
+}
+
+#importance-facts li strong {
+    color: #00796b;
+}
+
+/* Rodapé */
+footer {
+    background-color: #333;
+    color: white;
+    padding: 1 rem 0;
+    text-align: center;
+    position: relative;
+    width: 100%;
+    bottom: 0;
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.2);
+    
+}

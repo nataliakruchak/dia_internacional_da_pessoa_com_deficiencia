@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre - Dia Internacional da Pessoa com Deficiência</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<style>
+        /* Seção de introdução */
+    /* Seção de introdução */
+#intro {
+    background: url('imagens/inclusao-social-de-pessoas-com-deficiencia-1761x990.jpeg') no-repeat center center/cover;
+    position: relative;
+    overflow: hidden;
+    opacity: 0; /* Inicialmente invisível */
+    transform: translateY(50px); /* Inicialmente deslocado para baixo */
+    animation: slideUp 1s ease-out forwards; /* Animação de deslizamento */
+}
+
+/* Animação de deslizamento para cima */
+@keyframes slideUp {
+    to {
+        opacity: 1; /* Tornar visível */
+        transform: translateY(0); /* Voltar à posição original */
+    }
+}
+
+/* Overlay preto translúcido */
+#intro::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Ajuste a opacidade aqui */
+    z-index: 1;
+}
+
+/* Conteúdo da intro */
+#intro h2,
+#intro p,
+#intro button {
+    position: relative;
+    z-index: 2;
+}
+
+#intro h2 {
+    font-size: 2.5rem;
+}
+
+#intro p {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+
+#intro button {
+    background: #004d40;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+#intro button:hover {
+    background: #00251a;
+}
+
+/* Adicionando a animação para o h3 surgir da esquerda */
+.animated-from-left {
+    opacity: 0; /* Inicialmente invisível */
+    transform: translateX(-50px); /* Posiciona à esquerda */
+    transition: opacity 0.5s ease, transform 0.5s ease; /* Transições suaves */
+}
+
+/* Animação para os itens surgirem da direita */
+.animated-from-right {
+    opacity: 0;
+    transform: translateX(50px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+/* Animação para os itens surgirem de baixo */
+.animated-from-bottom {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+/* Quando o item entra em vista */
+.visible {
+    opacity: 1;
+    transform: translateX(0) translateY(0);
+}
+
+</style>
+
+<script>
+// Função para verificar quando os elementos estiverem visíveis
+function handleScrollAnimation() {
+    const elements = document.querySelectorAll('.animated-from-left, .animated-from-right, .animated-from-bottom');
+
+    elements.forEach(element => {
+        const rect = element.getBoundingClientRect();
+        if (rect.top < window.innerHeight && rect.bottom >= 0) {
+            element.classList.add('visible'); // Adiciona a classe 'visible' quando o item está visível
+        }
+    });
+}
+
+// Escuta o evento de rolar a página
+window.addEventListener('scroll', handleScrollAnimation);
+
+// Chama a função na carga inicial da página para ver se algum elemento já está visível
+handleScrollAnimation();
+
+
+</script>
+
+<body>
+    <!-- Cabeçalho -->
+    <header>
+        <h1><a href="index.html">Dia Internacional da Pessoa com Deficiência</a></h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Início</a></li>
+                <li><a href="sobre.html" class="active">Sobre</a></li>
+                <li><a href="importancia.html">Importância</a></li>
+                <li><a href="historia.html">História</a></li>
+                <li><a href="acessibilidade.html">Acessibilidade</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Conteúdo Principal -->
+    <main>
+        <!-- Introdução -->
+        <section id="intro">
+            <h2>Sobre</h2>
+            <p>
+                O Dia Internacional da Pessoa com Deficiência, celebrado em <strong>3 de dezembro</strong>, 
+                é uma data reconhecida globalmente com o objetivo de promover os direitos e o bem-estar das 
+                pessoas com deficiência em todas as esferas da sociedade e do desenvolvimento.
+            </p>
+            <p>
+                Instituído pela <strong>Organização das Nações Unidas (ONU)</strong> em 1992, o dia incentiva 
+                a reflexão sobre a inclusão e a acessibilidade, destacando a importância de um mundo que 
+                acolha e valorize todas as pessoas.
+            </p>
+        </section>
+
+        <!-- Destaques -->
+        <section id="highlights">
+            <div class="card">
+                <h3>Objetivos</h3>
+                <p>
+                    Este dia busca conscientizar sobre os desafios enfrentados pelas pessoas com deficiência 
+                    e promover ações que garantam direitos iguais, acessibilidade e inclusão social.
+                </p>
+            </div>
+            <div class="card">
+                <h3>Impacto Global</h3>
+                <p>
+                    Ao longo dos anos, essa celebração tem fortalecido a implementação de políticas públicas 
+                    e iniciativas que beneficiam milhões de pessoas ao redor do mundo.
+                </p>
+            </div>
+            <div class="card">
+                <h3>Como Participar?</h3>
+                <p>
+                    Engaje-se organizando eventos, promovendo debates e destacando histórias de superação. 
+                    A participação ativa da sociedade é essencial para transformar realidades.
+                </p>
+            </div>
+        </section>
+
+        <!-- Estatísticas Globais -->
+        <section id="stats">
+            <h2>Estatísticas Globais</h2>
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <h3 class="animated-from-left">1 Bilhão</h3>
+                    <p>
+                        Pessoas vivem com algum tipo de deficiência, representando 15% da população mundial. 
+                        <p><a href="https://www.who.int/news-room/fact-sheets/detail/disability-and-health" target="_blank" class="source-link">Fonte: OMS</a> </p>
+                    </p>
+                </div>
+                <div class="stat-item">
+                    <h3 class="animated-from-right">80%</h3>
+                    <p>
+                        Das pessoas com deficiência vivem em países em desenvolvimento. 
+                        <p><a href="https://www.un.org/en/observances/day-of-persons-with-disabilities" target="_blank" class="source-link">Fonte: ONU</a></p>
+                    </p>
+                </div>
+                <div class="stat-item">
+                    <h3 class="animated-from-bottom">50%</h3>
+                    <p>
+                        Das pessoas com deficiência não têm acesso a cuidados médicos adequados. 
+                        <p><a href="https://www.who.int/news-room/fact-sheets/detail/disability-and-health" target="_blank" class="source-link">Fonte: OMS</a></p>
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Depoimentos -->
+        <section id="testimonials">
+            <h2>Depoimentos Inspiradores</h2>
+            <div class="testimonial">
+                <blockquote>
+                    "A inclusão começa quando somos ouvidos e respeitados. Este dia representa um marco para promover um mundo mais igualitário."
+                </blockquote>
+                <p>- Anna Paula, defensora dos direitos das pessoas com deficiência</p>
+                
+            </div>
+            <div class="testimonial">
+                <blockquote>
+                    "Superar os desafios diários me mostrou a força que temos dentro de nós. O apoio da sociedade é essencial para isso."
+                </blockquote>
+                <p>- João Carlos, atleta paralímpico</p>
+            </div>
+        </section>
+
+        <!-- Recursos -->
+        <section id="resources">
+            <h2>Recursos e Informações</h2>
+            <p>Explore links úteis para saber mais sobre os direitos das pessoas com deficiência:</p>
+            <ul>
+                <li><a href="https://www.un.org/en/observances/day-of-persons-with-disabilities" target="_blank">ONU - Dia Internacional</a></li>
+                <li><a href="https://www.who.int/news-room/fact-sheets/detail/disability-and-health" target="_blank">OMS - Saúde e Deficiência</a></li>
+                <li><a href="https://www.gov.br/mdh/pt-br/navegue-por-temas/pessoa-com-deficiencia" target="_blank">Direitos no Brasil</a></li>
+            </ul>
+        </section>
+    </main>
+
+    <!-- Rodapé -->
+    <footer>
+        <p>© 2024 - Dia Internacional da Pessoa com Deficiência. Todos os direitos reservados.</p>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="scripts.js"></script>
+</body>
+</html>

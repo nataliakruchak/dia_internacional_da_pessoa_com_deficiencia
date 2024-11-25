@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Importância - Dia Internacional da Pessoa com Deficiência</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<style>
+ 
+
+/* Seção de Introdução */
+#intro {
+    position: relative; /* Necessário para a posição do overlay */
+    background: url('imagens/verde.avif') no-repeat center center/cover;
+    background-size: cover;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    opacity: 0; /* Inicialmente invisível */
+    transform: translateY(50px); /* Começa fora da tela, abaixo */
+    animation: slideUp 1s forwards; /* Aplica a animação */
+}
+
+/* Overlay preto translúcido */
+#intro::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Cor preta com 50% de opacidade */
+    z-index: 1; /* Coloca o overlay acima da imagem, mas abaixo do conteúdo */
+    border-radius: 8px; /* Mantém a borda arredondada do conteúdo */
+}
+
+/* Conteúdo da intro (fica acima do overlay) */
+#intro h2,
+#intro p {
+    position: relative; /* Fica acima do overlay */
+    z-index: 2; /* Garante que o texto fique acima do overlay */
+}
+
+#intro h2 {
+    font-size: 2.5rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+}
+
+#intro p {
+    font-size: 1.2rem;
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+/* Animação de deslizar para cima */
+@keyframes slideUp {
+    0% {
+        opacity: 0;
+        transform: translateY(50px); /* Começa abaixo */
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0); /* Termina no seu lugar */
+    }
+}
+
+/* Conteúdo Principal */
+#content {
+    margin-top: 2rem;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+}
+
+#content h3 {
+    font-size: 1.8rem;
+    color: #00796b;
+    margin-bottom: 1rem;
+}
+
+#content p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+    text-align: justify;
+}
+
+#content ul {
+    list-style-type: disc;
+    margin-left: 2rem;
+    margin-bottom: 2rem;
+}
+
+#content ul li {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+    text-align: justify;
+}
+
+
+</style>
+<body>
+    <!-- Cabeçalho -->
+    <header>
+        <h1 onclick="window.location.href='index.html';">Dia Internacional da Pessoa com Deficiência</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Início</a></li>
+                <li><a href="sobre.html">Sobre</a></li>
+                <li><a href="importancia.html" class="active">Importância</a></li>
+                <li><a href="historia.html">História</a></li>
+                <li><a href="acessibilidade.html">Acessibilidade</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Seção Principal -->
+    <main>
+        <section id="intro">
+            <h2>A Importância desse Dia</h2>
+            <p>
+                O Dia Internacional da Pessoa com Deficiência é um momento essencial para promover a conscientização sobre as questões de acessibilidade e igualdade. Ele visa garantir que as pessoas com deficiências tenham os mesmos direitos e oportunidades que qualquer outra pessoa.
+            </p>
+        </section>
+
+        <section id="content">
+            <h3>Por Que Celebrar Este Dia?</h3>
+            <p>
+                Celebrar o Dia Internacional da Pessoa com Deficiência nos ajuda a refletir sobre os desafios que pessoas com deficiência enfrentam diariamente e como podemos contribuir para uma sociedade mais inclusiva e acessível. A data também é uma oportunidade para destacar o progresso feito e os avanços em termos de acessibilidade e direitos humanos.
+            </p>
+
+            <h3>Conscientização e Educação</h3>
+            <p>
+                A conscientização é o primeiro passo para a mudança. Este dia oferece uma plataforma global para educar as pessoas sobre as barreiras enfrentadas por aqueles com deficiência. Ele nos lembra da importância de adaptar nossas atitudes, políticas e práticas para incluir todos os indivíduos.
+            </p>
+
+            <h3>Desafios Atuais</h3>
+            <ul>
+                <li><strong>Acessibilidade:</strong> Muitas cidades e ambientes ainda são inacessíveis para pessoas com mobilidade reduzida.</li>
+                <li><strong>Educação:</strong> A educação inclusiva é um desafio em muitos países, com poucos recursos e materiais adaptados.</li>
+                <li><strong>Emprego:</strong> A discriminação no mercado de trabalho ainda é uma barreira significativa para a inclusão social.</li>
+            </ul>
+
+            <h3>Como Você Pode Contribuir</h3>
+            <p>
+                Pequenos atos de inclusão podem fazer uma grande diferença na vida de uma pessoa com deficiência. Aqui estão algumas maneiras de contribuir:
+            </p>
+            <ul>
+                <li>Adapte seu ambiente de trabalho para ser mais acessível.</li>
+                <li>Promova a inclusão em escolas e instituições de ensino.</li>
+                <li>Eduque-se sobre as necessidades das pessoas com deficiência e compartilhe o conhecimento.</li>
+                <li>Participe de iniciativas que promovam a acessibilidade e inclusão social.</li>
+            </ul>
+        </section>
+    </main>
+
+    <!-- Rodapé -->
+    <footer>
+        <p>&copy; 2024 Dia Internacional da Pessoa com Deficiência. Todos os direitos reservados.</p>
+    </footer>
+
+</body>
+</html>

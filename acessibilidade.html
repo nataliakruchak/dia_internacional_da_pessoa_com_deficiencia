@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acessibilidade</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="scripts.js" defer></script>
+</head>
+<style>
+    /* Estilos básicos */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #fafafa;
+    color: #333;
+}
+
+/* Intro com gradiente */
+#intro {
+    background: url('imagens/acessibilidade.png') no-repeat center;
+    background-position: center 85%; 
+    background-size: cover;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+    padding: 5rem 2rem; 
+    animation: slideUp 1s forwards;
+    transform: translateY(30px);
+    opacity: 0;
+}
+/* Overlay preto translúcido */
+#intro::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Cor preta com 50% de opacidade */
+    z-index: 1; /* Coloca o overlay acima da imagem, mas abaixo do conteúdo */
+    border-radius: 8px; /* Mantém a borda arredondada do conteúdo */
+}
+
+
+/* Conteúdo da intro (fica acima do overlay) */
+#intro h2,
+#intro p {
+    position: relative; /* Fica acima do overlay */
+    z-index: 2; /* Garante que o texto fique acima do overlay */
+}
+
+#intro h2 {
+    font-size: 2.5rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+}
+
+#intro p {
+    font-size: 1.2rem;
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+/* Seção de definição */
+#definition {
+    margin: 2rem auto;
+    padding: 1rem;
+    max-width: 800px;
+    text-align: center;
+    background-color: #e0f7fa;
+    border-radius: 8px;
+}
+
+/* Cards de leis */
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+    margin: 2rem 0;
+}
+
+.card {
+    background: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    padding: 1rem;
+    flex: 1 1 30%;
+    text-align: center;
+    transition: transform 0.3s;
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+.card h3 {
+    color: #00796b;
+    margin-bottom: 0.5rem;
+}
+
+.card p {
+    color: #666;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.card.visible {
+    opacity: 1;
+    transform: translateY(0);
+    transition: all 0.5s ease;
+}
+
+/* Dicas */
+#tips {
+    margin: 2rem auto;
+    padding: 1rem;
+    max-width: 800px;
+    text-align: left;
+    background-color: #e8f5e9;
+    border-radius: 8px;
+}
+
+#tips h2{
+    text-align: center;
+}
+
+</style>
+    <header>
+        <h1><a href="index.html">Dia Internacional da Pessoa com Deficiência</a></h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Início</a></li>
+                <li><a href="sobre.html">Sobre</a></li>
+                <li><a href="importancia.html">Importância</a></li>
+                <li><a href="historia.html">História</a></li>
+                <li><a href="acessibilidade.html" class="active">Acessibilidade</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="intro">
+            <h2>Acessibilidade: Promovendo a Inclusão</h2>
+            <p>
+                A acessibilidade é essencial para garantir que todas as pessoas, independentemente de suas condições físicas ou sensoriais, tenham acesso pleno aos direitos, serviços e oportunidades. 
+            </p>
+        </section>
+
+        <section id="definition">
+            <h2>O que é Acessibilidade?</h2>
+            <p>
+                Acessibilidade é o princípio que busca eliminar barreiras físicas, tecnológicas e sociais que possam impedir ou dificultar a participação plena de pessoas com deficiência na sociedade. 
+            </p>
+        </section>
+
+        <section id="laws">
+            <h2>Leis e Normas sobre Acessibilidade</h2>
+            <div class="cards">
+                <div class="card animated-from-left">
+                    <h3>Lei Brasileira de Inclusão (LBI)</h3>
+                    <p>A LBI garante os direitos das pessoas com deficiência, promovendo acessibilidade em espaços públicos e privados.</p>
+                    <p><a href="https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2015/lei/l13146.htm" target="_blank" class="source-link">Fonte: GOV</a></p>
+
+                </div>
+                <div class="card animated-from-right">
+                    <h3>Convenção da ONU</h3>
+                    <p>
+                        A Convenção sobre os Direitos das Pessoas com Deficiência reafirma a necessidade de promover a igualdade e eliminar discriminações.
+                    </p>
+                    <p><a href="https://www.planalto.gov.br/ccivil_03/_ato2007-2010/2009/decreto/d6949.htm" target="_blank" class="source-link">Fonte: GOV</a></p>
+                </div>
+                <div class="card animated-from-bottom">
+                    <h3>ABNT NBR 9050</h3>
+                    <p>
+                        Norma técnica brasileira que estabelece critérios de acessibilidade em edificações, mobiliário, espaços e equipamentos urbanos.
+                    </p>
+                    <p><a href="https://acessibilidade.unb.br/images/PDF/NORMA_NBR-9050.pdf" target="_blank" class="source-link">Fonte: ABNT</a></p>
+                </div>
+            </div>
+        </section>
+
+        <section id="tips">
+            <h2>Dicas para Promover a Acessibilidade</h2>
+            <ul>
+                <li>Adapte seu site para ser navegável por teclado e leitores de tela.</li>
+                <li>Ofereça rampas e elevadores em edifícios públicos e privados.</li>
+                <li>Garanta transporte público acessível com sinalização adequada.</li>
+                <li>Inclua legendas e audiodescrição em materiais audiovisuais.</li>
+                <li>Incentive práticas inclusivas no ambiente de trabalho.</li>
+                <li>Utilize cores contrastantes e fontes legíveis para facilitar a leitura.</li>
+                <li>Garanta que os conteúdos online sejam acessíveis para pessoas com deficiência visual, auditiva e motora.</li>
+            
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2024 - Dia Internacional da Pessoa com Deficiência. Todos os direitos reservados.</p>
+    </footer>
+</body>
+</html>

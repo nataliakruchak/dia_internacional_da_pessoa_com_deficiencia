@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>História | Dia Internacional da Pessoa com Deficiência</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<style>
+    /* Seção de Introdução */
+    #intro {
+    background: linear-gradient(to right, #00c9b1, #00352c); /* Degradê de verde para verde escuro */
+    animation: slideUp 1s forwards; /* Animação de deslizar para cima */
+}
+
+#intro h2 {
+    font-size: 2.5rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+}
+
+#intro p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Keyframes para animar a intro */
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+#historical-milestones {
+    display: flex;
+    justify-content: center; /* Alinha os cards no centro */
+    gap: 1.5rem; /* Aumenta o espaçamento entre os cards */
+    flex-wrap: wrap;
+    margin: 1rem 0;
+    text-align: center; /* Centraliza o texto dentro dos cards */
+}
+
+#historical-milestones h2 {
+    width: 100%; /* Faz o título ocupar toda a largura */
+    text-align: center; /* Garante que o título fique centralizado */
+    font-size: 2rem;
+    color: #00796b;
+    margin-bottom: 2rem;
+}
+
+/* Cartões de marcos históricos */
+.card-marco {
+    background-color: #ffffff;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    width: 30%;
+    min-width: 250px; /* Garante que os cards não fiquem muito pequenos */
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; 
+
+}
+
+.card-marco:hover {
+    transform: scale(3.3); /* Aumenta o card ao passar o mouse */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Adiciona uma sombra mais forte */
+}
+
+.card-marco h3 {
+    font-size: 1.5rem;
+    color: #00796b;
+    margin-bottom: 1rem;
+}
+
+.card-marco p {
+    color: #666;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+/* Animação de deslizar para cima */
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px); /* Começa deslocado para baixo */
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0); /* Fica em sua posição original */
+    }
+}
+
+/* Classe aplicada para iniciar a animação */
+.animate-slide-up {
+    animation: slideUp 0.8s ease-out forwards;
+}
+
+/* Cards começam invisíveis */
+.card-marco {
+    opacity: 0; /* Invisível até a animação começar */
+}
+
+/* Classe aplicada para iniciar a animação */
+.animate-slide-up {
+    animation: slideUp 0.8s ease-out forwards;
+}
+
+/* A seção #progress começa invisível */
+.animated-progress {
+    opacity: 0; /* Invisível até a animação começar */
+}
+#progress {
+    margin: 2rem 0;
+    padding: 1.5rem;
+    background-color: #e0f2f1;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#progress h2 {
+    color: #00796b;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+#progress p {
+    line-height: 1.6;
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+#progress ul {
+    list-style: disc;
+    padding-left: 1.5rem;
+    color: #333;
+}
+
+#progress ul li {
+    margin-bottom: 0.5rem;
+    text-align: justify;
+}
+
+#progress ul li strong {
+    color: #00796b;
+}
+
+
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    // Seleciona os elementos a serem animados
+    const elementsToAnimate = document.querySelectorAll(
+        '.card-marco, .animated-title, .animated-content, .animated-progress'
+    );
+
+    // Função para verificar a visibilidade dos elementos
+    function checkVisibility() {
+        elementsToAnimate.forEach(element => {
+            const rect = element.getBoundingClientRect();
+            const isVisible = rect.top < window.innerHeight && rect.bottom >= 0;
+
+            // Aplica a animação se o elemento estiver visível
+            if (isVisible) {
+                element.classList.add('animate-slide-up');
+            }
+        });
+    }
+
+    // Adiciona o evento para verificar ao rolar a página
+    window.addEventListener('scroll', checkVisibility);
+
+    // Verifica ao carregar a página
+    checkVisibility();
+});
+
+
+</script>
+    
+<body>
+
+    <header>
+        <h1><a href="index.html">Dia Internacional da Pessoa com Deficiência</a></h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Início</a></li>
+                <li><a href="sobre.html">Sobre</a></li>
+                <li><a href="importancia.html">Importância</a></li>
+                <li><a href="historia.html">História</a></li>
+                <li><a href="acessibilidade.html">Acessibilidade</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="intro">
+            <h2>História</h2>
+            <p>O Dia Internacional da Pessoa com Deficiência, celebrado em 3 de dezembro, remonta a um longo processo de luta pelos direitos e pela inclusão de pessoas com deficiência ao longo da história. Desde os tempos antigos até os dias de hoje, os desafios foram superados por movimentos sociais e legislações que garantiram os direitos humanos dessas pessoas.</p>
+        </section>
+
+        <section id="historical-milestones">
+            <h2 class="animated-title">Marcos Históricos Importantes</h2>
+            <div class="card-marco">
+                <h3>Antiguidade</h3>
+                <p>Na Antiguidade, pessoas com deficiência eram frequentemente marginalizadas e vistas como objetos de caridade ou como uma carga social. Não havia direitos ou estruturas para sua inclusão.</p>
+            </div>
+            <div class="card-marco">
+                <h3>Década de 1960</h3>
+                <p>A luta por direitos civis nos Estados Unidos inspirou o movimento pelos direitos das pessoas com deficiência. Foi o início de um movimento organizado por legislações como a Lei dos Americanos com Deficiências, de 1990.</p>
+            </div>
+            <div class="card-marco">
+                <h3>1981 - Ano Internacional das Pessoas com Deficiência</h3>
+                <p>Em 1981, a ONU declarou o Ano Internacional das Pessoas com Deficiência, promovendo conscientização global e reconhecendo a importância da integração social e a eliminação de barreiras para essas pessoas.</p>
+            </div>
+        </section>
+        
+
+        <section id="progress" class="animated-progress">
+            <h2>Avanços e Conquistas Recentes</h2>
+            <p>
+                Nos últimos anos, testemunhamos avanços significativos em diversas áreas que afetam diretamente a vida das pessoas com deficiência. Esses progressos representam passos importantes na construção de uma sociedade mais inclusiva e igualitária.
+            </p>
+            <ul>
+                <li><strong>Educação Inclusiva:</strong> Escolas e universidades estão cada vez mais adotando práticas inclusivas, como a formação de professores e a adaptação de currículos para atender alunos com diferentes tipos de deficiência.</li>
+                <li><strong>Trabalho:</strong> Empresas têm implementado programas de inclusão no mercado de trabalho, garantindo acessibilidade e promovendo a capacitação de profissionais com deficiência.</li>
+                <li><strong>Tecnologias Assistivas:</strong> O desenvolvimento de dispositivos, como leitores de tela, próteses inteligentes e softwares de comunicação aumentativa, tem proporcionado mais autonomia e qualidade de vida.</li>
+                <li><strong>Legislação e Direitos:</strong> A criação e ratificação de leis, como a Lei Brasileira de Inclusão (LBI) e a Convenção sobre os Direitos das Pessoas com Deficiência da ONU, têm fortalecido a proteção dos direitos fundamentais.</li>
+                <li><strong>Esportes:</strong> Eventos como os Jogos Paralímpicos têm aumentado a visibilidade e o reconhecimento dos atletas com deficiência, além de inspirar mudanças sociais significativas.</li>
+                <li><strong>Conscientização Pública:</strong> Campanhas globais e locais têm promovido uma maior sensibilização da sociedade sobre os desafios enfrentados pelas pessoas com deficiência e a importância da inclusão.</li>
+            </ul>
+            <p>
+                Apesar dessas conquistas, ainda há muito a ser feito. Barreiras arquitetônicas, preconceitos e a falta de políticas públicas robustas continuam sendo desafios a serem enfrentados. O futuro requer esforços contínuos para garantir que todas as pessoas tenham as mesmas oportunidades, independentemente de suas condições.
+            </p>
+            <p>
+                <strong>Próximos Passos:</strong> A ampliação da acessibilidade digital, a maior representatividade nos meios de comunicação e o fortalecimento da educação sobre inclusão são apenas algumas das ações que precisam ser priorizadas.
+            </p>
+        </section>
+        
+        
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Dia Internacional da Pessoa com Deficiência. Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
